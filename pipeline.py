@@ -19,7 +19,8 @@ if response.status_code == 200:
     
     # We use sep=';' because your Kobo export seems to use semicolons
     df = pd.read_csv(csv_data, sep=';', on_bad_lines='skip')
-    
+
+
     # IMPORTANT: Only strip whitespace, don't remove spaces yet so we can match the SQL
     df.columns = [col.strip() for col in df.columns]
 
